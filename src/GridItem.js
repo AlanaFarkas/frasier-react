@@ -1,8 +1,8 @@
 import React from 'react';
 
-const GridItem = ({item}) => {
+const GridItem = ({url}) => {
     return (
-        <img src={item} />
+        <iframe src={url} />
     )
 }
 

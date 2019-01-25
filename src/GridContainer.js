@@ -1,9 +1,9 @@
 import React from 'react';
-// import GridItem from './GridItem';
+import GridItem from './GridItem';
 
 const GridContainer = ({gridItems}) => {
     const gridContents = gridItems.map((item) => 
-        <iframe src={item.embed_url} />
+        <GridItem url={item.embed_url} />
     );
     return gridContents;
 }
