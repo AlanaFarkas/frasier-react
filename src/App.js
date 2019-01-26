@@ -18,11 +18,15 @@ class App extends Component {
       .then(data => this.setState({ data: data.data }));
   }
 
+  handleClick = () => {
+    console.log("clicked");
+  }
+
   render() {
     return (
       <AppContainerDiv>
-        <Hero headline="Because I love Frasier" />
-        <GridContainer active={this.state.active} gridItems={this.state.data} />
+        <Hero onClick={this.handleClick} headline="Because I love Frasier" />
+        <GridContainer onClick={this.handleClick} active={this.state.active} gridItems={this.state.data} />
       </AppContainerDiv>
 
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import GridItem from './GridItem';
 import styled from 'styled-components';
 
-const GridContainer = ({active, gridItems}) => {
+const GridContainer = ({active, handleClick, gridItems}) => {
     const gridContents = gridItems.map((item) => 
         <GridItem active={active} key={item.id}>
             <img alt="" src={item.images.fixed_width.url} />
@@ -10,7 +10,7 @@ const GridContainer = ({active, gridItems}) => {
     );
 
     return (
-        <GridContainerDiv>
+        <GridContainerDiv onClick={handleClick}>
             {gridContents}
         </GridContainerDiv>
     )   
