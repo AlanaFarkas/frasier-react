@@ -20,12 +20,13 @@ class App extends Component {
 
   handleClick = () => {
     console.log("clicked");
+  
   }
 
   render() {
     return (
       <AppContainerDiv>
-        <Hero onClick={this.handleClick} headline="Because I love Frasier" />
+        <Hero headline="Because I love Frasier" />
         <GridContainer onClick={this.handleClick} active={this.state.active} gridItems={this.state.data} />
       </AppContainerDiv>
 
