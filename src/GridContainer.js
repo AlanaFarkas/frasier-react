@@ -24,8 +24,7 @@ const GridContainerDiv = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     strong  {
-
-        border: ${props => props.active ? '1px red solid' : '1px blue solid'}
+        display: ${props => props.active ? 'block' : 'none'}
     }
 `;
 
