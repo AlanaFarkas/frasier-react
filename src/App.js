@@ -32,7 +32,9 @@ class App extends Component {
 export default App;
 
 const AppContainerDiv = styled.div`
-  margin: 20px;
+  margin: 35px
 `;
+
+
 
 
