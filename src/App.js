@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <AppContainerDiv>
         <Hero headline="Because I love Frasier" />
-        <GridContainerDiv gridItems={this.state.data} />
+        <GridContainer gridItems={this.state.data} />
       </AppContainerDiv>
 
     );
@@ -35,8 +35,4 @@ const AppContainerDiv = styled.div`
   margin: 20px;
 `;
 
-const GridContainerDiv = styled(GridContainer)`
-  display: flex; 
-  flex-flow: row wrap;
-  justify-content: space-between;
-`;
+
