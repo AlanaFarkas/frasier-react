@@ -29,7 +29,7 @@ class App extends Component {
 
   render() {
     return (
-      <AppContainerDiv active={this.state.active}>
+      <AppContainerDiv>
         <Hero headline="Because I love Frasier" />
         <GridContainer onClick={this.handleClick} active={this.state.active} gridItems={this.state.data} />
       </AppContainerDiv>
@@ -42,7 +42,6 @@ export default App;
 
 const AppContainerDiv = styled.div`
   margin: 35px
-  border: ${props => props.active ? '1px red solid' : '1px blue solid'}
 `;
 
 //Because I love Frasier as title card with a timeout on componentDidMount before fading to the tile gallery?
