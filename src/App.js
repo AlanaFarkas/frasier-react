@@ -25,9 +25,11 @@ class App extends Component {
     }))
   }
 
+  //each child component has the same state but when the state active: true, then show the clicked child components data (title maybe?)
+
   render() {
     return (
-      <AppContainerDiv>
+      <AppContainerDiv active={this.state.active}>
         <Hero headline="Because I love Frasier" />
         <GridContainer onClick={this.handleClick} active={this.state.active} gridItems={this.state.data} />
       </AppContainerDiv>
@@ -40,6 +42,7 @@ export default App;
 
 const AppContainerDiv = styled.div`
   margin: 35px
+  border: ${props => props.active ? '1px red solid' : '1px blue solid'}
 `;
 
 //Because I love Frasier as title card with a timeout on componentDidMount before fading to the tile gallery?

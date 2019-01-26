@@ -12,6 +12,8 @@ const GridItem = ({children, onClick}) => {
 export default GridItem;
 
 const GridItemDiv = styled.div`
-    display: inline-block;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     margin: 20px;
 `;
