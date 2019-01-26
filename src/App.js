@@ -20,7 +20,9 @@ class App extends Component {
 
   handleClick = () => {
     console.log("clicked");
-  
+    this.setState(prevState => ({
+      active: !prevState.active
+    }))
   }
 
   render() {
