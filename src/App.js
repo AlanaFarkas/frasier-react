@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <AppContainerDiv>
         <Hero headline="Because I love Frasier" />
-        <GridContainer gridItems={this.state.data} />
+        <GridContainer active={this.state.active} gridItems={this.state.data} />
       </AppContainerDiv>
 
     );
@@ -34,6 +34,8 @@ export default App;
 const AppContainerDiv = styled.div`
   margin: 35px
 `;
+
+//Because I love Frasier as title card with a timeout on componentDidMount before fading to the tile gallery?
 
 
 
