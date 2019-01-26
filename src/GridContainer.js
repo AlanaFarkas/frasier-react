@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const GridContainer = ({gridItems}) => {
     const gridContents = gridItems.map((item) => 
-        <GridItemiFrame key={item.id} url={item.embed_url} />
+        <GridItemiFrame key={item.id} url={item.images.original.url} />
     );
     return gridContents;
 }
@@ -15,11 +15,6 @@ const GridItemiFrame = styled(GridItem)`
     border: none;
     width: 300px;
     height: 300px;
-    img {
-        display: block;
-        max-width: 100%;
-        max-height: 100%;
-    }
 `;
 
 
