@@ -1,8 +1,16 @@
 import React from 'react';
 
-const GridItem = ({url, ...restProps}) => {
+// const GridItem = ({url, ...restProps}) => {
+//     return (
+//         <iframe {...restProps} title={url.title} src={url} />
+//     )
+// }
+
+const GridItem = ({children}) => {
     return (
-        <iframe {...restProps} title={url.title} src={url} />
+        <div>
+            {children}
+        </div>
     )
 }
 
