@@ -18,8 +18,8 @@ class App extends Component {
       .then(data => this.setState({ data: data.data }));
   }
 
-  handleClick = () => {
-    console.log("clicked");
+  handleClick = (id) => {
+    console.log("clicked" + id);
     this.setState(prevState => ({
       active: !prevState.active
     }))

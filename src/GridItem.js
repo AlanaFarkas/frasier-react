@@ -17,3 +17,4 @@ const GridItemDiv = styled.div`
     align-items: center;
     margin: 20px;
 `;
+
