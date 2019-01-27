@@ -19,13 +19,10 @@ class App extends Component {
   }
 
   handleClick = (obj) => {
-    console.log("clicked" + obj);
     this.setState({
       active: obj
     })
   }
-
-  //each child component has the same state but when the state active: true, then show the clicked child components data (title maybe?)
 
   render() {
     return (
@@ -43,8 +40,6 @@ export default App;
 const AppContainerDiv = styled.div`
   margin: 35px
 `;
-
-//Because I love Frasier as title card with a timeout on componentDidMount before fading to the tile gallery?
 
 
 
