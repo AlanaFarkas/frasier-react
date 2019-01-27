@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const GridContainer = ({active, data, handleClick}) => {
     const gridContents = data.map((item) => 
-        <GridItem handleClick={() => handleClick(item.id)} key={item.id}>
+        <GridItem active={active} handleClick={() => handleClick(item.id)} key={item.id}>
             <strong>{item.title}</strong>
             <img alt="" src={item.images.fixed_width.url} />
         </GridItem>        
