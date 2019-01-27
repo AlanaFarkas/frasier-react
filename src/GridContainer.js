@@ -2,9 +2,9 @@ import React from 'react';
 import GridItem from './GridItem';
 import styled from 'styled-components';
 
-const GridContainer = ({active, gridItems, onClick}) => {
+const GridContainer = ({active, gridItems, handleClick}) => {
     const gridContents = gridItems.map((item) => 
-        <GridItem onClick={() => onClick(item.id)} key={item.id}>
+        <GridItem handleClick={() => handleClick(item.id)} key={item.id}>
             <strong>{item.title}</strong>
             <img alt="" src={item.images.fixed_width.url} />
         </GridItem>        
