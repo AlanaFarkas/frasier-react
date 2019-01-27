@@ -8,7 +8,7 @@ class App extends Component {
     super(props)
     this.state = {
       data: [],
-      active: false
+      active: {}
     }
   }
 
@@ -18,11 +18,11 @@ class App extends Component {
       .then(data => this.setState({ data: data.data }));
   }
 
-  handleClick = (id) => {
-    console.log("clicked" + id);
-    this.setState(prevState => ({
-      active: !prevState.active
-    }))
+  handleClick = (obj) => {
+    console.log("clicked" + obj);
+    this.setState({
+      active: obj
+    })
   }
 
   //each child component has the same state but when the state active: true, then show the clicked child components data (title maybe?)
