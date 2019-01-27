@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <AppContainerDiv>
         <Hero headline="Because I love Frasier" />
-        <GridContainer handleClick={this.handleClick} active={this.state.active} gridItems={this.state.data} />
+        <GridContainer handleClick={this.handleClick} active={this.state.active} data={this.state.data} />
       </AppContainerDiv>
 
     );
