@@ -4,12 +4,11 @@ import styled from 'styled-components';
 
 const GridContainer = ({active, data, handleClick}) => {
 
+    // if active.id === item.id ? render strong tag
     const gridContents = data.map((item) => 
 
         <GridItem active={active} handleClick={() => handleClick({item})} key={item.id}>
-        {/* if item.id === selectedObj.id  */}
             <strong>{item.title}</strong>
-            {/* else */}
             <img alt="" src={item.images.fixed_width.url} />
         </GridItem>        
     );
