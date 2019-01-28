@@ -29,12 +29,12 @@ class App extends Component {
 
     const gridContents = this.state.data.map(item => {
       if(item.id === this.state.active) {
-        return <GridItem active={this.state.active} handleClick={this.handleClick} key={item.id} item={item}>      
+        return <GridItem handleClick={this.handleClick} key={item.id} item={item}>      
           <strong>{item.title}</strong>
           <img alt="" src={item.images.fixed_width.url} />
         </GridItem>   
       } else {
-          return <GridItem active={this.state.active} handleClick={this.handleClick} key={item.id} item={item}>      
+          return <GridItem handleClick={this.handleClick} key={item.id} item={item}>      
           <img alt="" src={item.images.fixed_width.url} />
         </GridItem>   
       }

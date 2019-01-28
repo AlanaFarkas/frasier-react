@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const GridItem = ({item, handleClick, children, active}) => {
+const GridItem = ({item, handleClick, children}) => {
     return (
-        <GridItemDiv active={active} onClick={() => handleClick({item})}>
-        {children}
+        <GridItemDiv onClick={() => handleClick({item})}>
+            {children}
         </GridItemDiv>
     )
 }
