@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Hero from './Hero';
 import styled from 'styled-components';
-import GridContainer from './GridContainer';
+// import GridContainer from './GridContainer';
+import GridItem from './GridItem';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       data: [],
-      active: {}
+      active: null
     }
   }
 
@@ -25,10 +26,14 @@ class App extends Component {
   }
 
   render() {
+    const gridContents = this.state.data.map(item =>     
+      <GridItem active={this.state.active} handleClick={this.handleClick} key={item.id} item={item}/>      
+    );
     return (
       <AppContainerDiv>
         <Hero headline="Because I love Frasier" />
-        <GridContainer handleClick={this.handleClick} active={this.state.active} data={this.state.data} />
+        {/* {this.state.active == null ? console.log("null") : console.log(this.state.active.item.id)} */}
+        {gridContents}
       </AppContainerDiv>
 
     );
