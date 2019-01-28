@@ -9,7 +9,7 @@ class App extends Component {
     super(props)
     this.state = {
       data: [],
-      active: null
+      active: {}
     }
   }
 
@@ -21,14 +21,26 @@ class App extends Component {
 
   handleClick = (obj) => {
     this.setState({
-      active: obj
+      active: obj.item.id
     })
   }
 
   render() {
-    const gridContents = this.state.data.map(item =>     
-      <GridItem active={this.state.active} handleClick={this.handleClick} key={item.id} item={item}/>      
-    );
+
+    const gridContents = this.state.data.map(item => {
+      if(item.id === this.state.active) {
+      return <GridItem active={this.state.active} handleClick={this.handleClick} key={item.id} item={item}>      
+        <strong>{item.title}</strong>
+        <img alt="" src={item.images.fixed_width.url} />
+      </GridItem>   
+      } else {
+        return <GridItem active={this.state.active} handleClick={this.handleClick} key={item.id} item={item}>      
+        <img alt="" src={item.images.fixed_width.url} />
+      </GridItem>   
+      }
+    });
+      // {console.log(this.state.active)}
+
     return (
       <AppContainerDiv>
         <Hero headline="Because I love Frasier" />

@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const GridItem = ({item, handleClick, active}) => {
+const GridItem = ({item, handleClick, children, active}) => {
     return (
         <GridItemDiv active={active} onClick={() => handleClick({item})}>
-            <strong>{item.title}</strong>
-            <img alt="" src={item.images.fixed_width.url} />
-        </GridItemDiv> 
+        {children}
+        </GridItemDiv>
     )
 }
 
