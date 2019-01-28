@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Hero from './Hero';
 import styled from 'styled-components';
-// import GridContainer from './GridContainer';
 import GridItem from './GridItem';
 
 class App extends Component {
@@ -30,7 +29,7 @@ class App extends Component {
     const gridContents = this.state.data.map(item => {
       if(item.id === this.state.active) {
         return <GridItem handleClick={this.handleClick} key={item.id} item={item}>      
-          <strong>{item.title}</strong>
+          <Title>{item.title}</Title>
           <img alt="" src={item.images.fixed_width.url} />
         </GridItem>   
       } else {
@@ -43,7 +42,9 @@ class App extends Component {
     return (
       <AppContainerDiv>
         <Hero headline="Because I love Frasier" />
-        {gridContents}
+        <GridContainerDiv>
+          {gridContents}
+        </GridContainerDiv>        
       </AppContainerDiv>
 
     );
@@ -55,6 +56,19 @@ export default App;
 const AppContainerDiv = styled.div`
   margin: 35px
 `;
+
+const GridContainerDiv = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Title = styled.strong`
+  
+`;
+
+
 
 
 

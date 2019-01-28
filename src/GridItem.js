@@ -12,9 +12,7 @@ const GridItem = ({item, handleClick, children}) => {
 export default GridItem;
 
 const GridItemDiv = styled.div`
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    position: relative
     margin: 20px;
 `;
 
