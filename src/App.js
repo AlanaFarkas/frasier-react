@@ -8,7 +8,8 @@ class App extends Component {
     super(props)
     this.state = {
       data: [],
-      active: {}
+      active: {},
+      visible: false
     }
   }
 
@@ -20,13 +21,15 @@ class App extends Component {
 
   handleMouseEnter = (obj) => {
     this.setState({
-      active: obj.item.id
+      active: obj.item.id,
+      visible: true
     })
   }
 
   handleMouseOut = (obj) => {
     this.setState({
-      active: null
+      active: null,
+      visible: false
     })
   }
 
@@ -73,7 +76,7 @@ const GridContainerDiv = styled.div`
 
 const Title = styled.div`
   max-width: 200px;
-`;
+  `;
 
 
 
