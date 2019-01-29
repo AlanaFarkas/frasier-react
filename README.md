@@ -1,6 +1,8 @@
 This app simply renders each moused-over gifs' title. The project was created to demonstrate proficiency in the following js/react concepts:
 * Event Handling
+* API Calls
 * Passing props and state
+* Conditional Rendering
 * Component Reusability
 * [A little bit of] Styling with styled-components
 
