@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const GridItem = ({item, handleClick, children}) => {
     return (
-        <GridItemDiv onClick={() => handleClick({item})}>
+        <GridItemDiv onMouseEnter={() => handleClick({item})}>
             {children}
         </GridItemDiv>
     )
