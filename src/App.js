@@ -18,7 +18,7 @@ class App extends Component {
       .then(data => this.setState({ data: data.data }));
   }
 
-  handleClick = (obj) => {
+  handleMouseEnter = (obj) => {
     this.setState({
       active: obj.item.id
     })
@@ -28,12 +28,12 @@ class App extends Component {
 
     const gridContents = this.state.data.map(item => {
       if(item.id === this.state.active) {
-        return <GridItem handleClick={this.handleClick} key={item.id} item={item}>      
+        return <GridItem handleMouseEnter={this.handleMouseEnter} key={item.id} item={item}>      
           <img alt="" src={item.images.fixed_width.url} />
           <Title>{item.title}</Title>
         </GridItem>   
       } else {
-          return <GridItem handleClick={this.handleClick} key={item.id} item={item}>      
+          return <GridItem handleMouseEnter={this.handleMouseEnter} key={item.id} item={item}>      
           <img alt="" src={item.images.fixed_width.url} />
         </GridItem>   
       }

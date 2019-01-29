@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const GridItem = ({item, handleClick, children}) => {
+const GridItem = ({item, handleMouseEnter, children}) => {
     return (
-        <GridItemDiv onMouseEnter={() => handleClick({item})}>
+        <GridItemDiv onMouseEnter={() => handleMouseEnter({item})}>
             {children}
         </GridItemDiv>
     )
