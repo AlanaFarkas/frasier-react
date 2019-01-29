@@ -33,16 +33,17 @@ class App extends Component {
   render() {
 
     const gridContents = this.state.data.map(item => {
-      if(item.id === this.state.active) {
-        return <GridItem key={item.id} item={item}>      
-          <img handleMouseEnter={this.handleMouseEnter} onMouseOut={this.handleMouseOut} alt="" src={item.images.fixed_width.url} />
-          <Title>{item.title}</Title>
-        </GridItem>   
-      } else {
-          return <GridItem handleMouseEnter={this.handleMouseEnter} key={item.id} item={item}>      
-          <img alt="" src={item.images.fixed_width.url} />
-        </GridItem>   
-      }
+      return (
+        <GridItem 
+          item={item}
+          key={item.id} 
+          handleMouseEnter={this.handleMouseEnter} 
+          handleMouseOut={this.handleMouseOut}
+          >
+            <img alt="" src={item.images.fixed_width.url} />
+            {item.id === this.state.active ? <Title>{item.title}</Title> : null}
+        </GridItem> 
+      )  
     });
 
     return (

@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const GridItem = ({item, handleMouseEnter, children}) => {
+const GridItem = ({item, handleMouseEnter, handleMouseOut, children}) => {
     return (
-        <GridItemDiv onMouseEnter={() => handleMouseEnter({item})}>
-            {children}
+        <GridItemDiv 
+            onMouseEnter={() => handleMouseEnter({item})} 
+            onMouseOut={() => handleMouseOut({item})}
+            >
+                {children}
         </GridItemDiv>
     )
 }
