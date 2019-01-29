@@ -24,7 +24,7 @@ class App extends Component {
     })
   }
 
-  handleMouseLeave = (obj) => {
+  handleMouseOut = (obj) => {
     this.setState({
       active: null
     })
@@ -35,7 +35,7 @@ class App extends Component {
     const gridContents = this.state.data.map(item => {
       if(item.id === this.state.active) {
         return <GridItem key={item.id} item={item}>      
-          <img handleMouseEnter={this.handleMouseEnter} onMouseOut={this.handleMouseLeave} alt="" src={item.images.fixed_width.url} />
+          <img handleMouseEnter={this.handleMouseEnter} onMouseOut={this.handleMouseOut} alt="" src={item.images.fixed_width.url} />
           <Title>{item.title}</Title>
         </GridItem>   
       } else {
