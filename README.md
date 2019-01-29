@@ -10,6 +10,9 @@ I used Frasier gifs just because I love Frasier.
 
 In the project directory, you can run:
 
+### `npm install`
+
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
