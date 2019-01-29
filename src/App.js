@@ -24,12 +24,18 @@ class App extends Component {
     })
   }
 
+  handleMouseLeave = (obj) => {
+    this.setState({
+      active: null
+    })
+  }
+
   render() {
 
     const gridContents = this.state.data.map(item => {
       if(item.id === this.state.active) {
-        return <GridItem handleMouseEnter={this.handleMouseEnter} key={item.id} item={item}>      
-          <img alt="" src={item.images.fixed_width.url} />
+        return <GridItem key={item.id} item={item}>      
+          <img handleMouseEnter={this.handleMouseEnter} onMouseOut={this.handleMouseLeave} alt="" src={item.images.fixed_width.url} />
           <Title>{item.title}</Title>
         </GridItem>   
       } else {
@@ -64,7 +70,7 @@ const GridContainerDiv = styled.div`
   align-items: center;
 `;
 
-const Title = styled.strong`
+const Title = styled.div`
   
 `;
 
