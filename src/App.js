@@ -71,7 +71,7 @@ const GridContainerDiv = styled.div`
 `;
 
 const Title = styled.div`
-  
+  max-width: 200px;
 `;
 
 
