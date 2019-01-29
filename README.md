@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app simply renders each moused-over gifs' title. The project was created to demonstrate proficiency in the following js/react concepts:
+* Event Handling
+* Passing props and state
+* Component Reusability
+* [A little bit of] Styling with styled-components
+
+I used Frasier gifs just because I love Frasier.
 
 ## Available Scripts
 
