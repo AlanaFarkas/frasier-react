@@ -26,7 +26,7 @@ class App extends Component {
     })
   }
 
-  handleMouseOut = (obj) => {
+  handleMouseOut = () => {
     this.setState({
       active: null,
       visible: false
@@ -42,9 +42,13 @@ class App extends Component {
           key={item.id} 
           handleMouseEnter={this.handleMouseEnter} 
           handleMouseOut={this.handleMouseOut}
-          >
-            <img alt="" src={item.images.fixed_width.url} />
-            {item.id === this.state.active ? <Title>{item.title}</Title> : null}
+        >
+            <img 
+              title={item.title} 
+              alt={item.title} 
+              src={item.images.fixed_width.url} 
+            />
+          {item.id === this.state.active ? <Title>{item.title}</Title> : null}
         </GridItem> 
       )  
     });
@@ -76,10 +80,4 @@ const GridContainerDiv = styled.div`
 
 const Title = styled.div`
   max-width: 200px;
-  `;
-
-
-
-
-
-
+`;
