@@ -14,8 +14,9 @@ class App extends Component {
   }
 
   handleClick = () => {
+    const { showHelloWorld } = this.state
     this.setState({
-      showHelloWorld: true
+      showHelloWorld: !showHelloWorld
     })
   }
 
@@ -35,13 +36,14 @@ class App extends Component {
   // }
 
   render() {
+    const { showHelloWorld } = this.state;
     return (
       <>
       <Button 
         onClick={this.handleClick} 
         ariaProps={{
           ariaLabel: 'LABEL',
-          ariaPressed: 'PRESSED',
+          ariaPressed: showHelloWorld ? true : false,
           ariaExpanded: 'EXPANDED'
         }}
       >
