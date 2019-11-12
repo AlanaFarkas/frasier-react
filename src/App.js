@@ -9,16 +9,19 @@ class App extends Component {
       data: [],
       active: {},
       visible: false,
-      showHelloWorld: false
+      showHelloWorld: false,
+      testString: 'testing 123'
     }
   }
 
   handleClick = () => {
-    const { showHelloWorld } = this.state
-    this.setState({
-      showHelloWorld: !showHelloWorld
-    })
+    // const { showHelloWorld } = this.state
+  this.setState((prevState) => ({
+    showHelloWorld: !prevState.showHelloWorld
+  }));
   }
+
+
 
   maybeRenderHelloWorld = () => {
     const { showHelloWorld } = this.state
@@ -36,18 +39,19 @@ class App extends Component {
   // }
 
   render() {
-    const { showHelloWorld } = this.state;
+    const buttonText = "Click here to learn more"
+    const { showHelloWorld, testString } = this.state;
     return (
       <>
       <Button 
         onClick={this.handleClick} 
         ariaProps={{
-          ariaLabel: 'LABEL',
+          ariaLabel: buttonText,
           ariaPressed: showHelloWorld ? true : false,
           ariaExpanded: 'EXPANDED'
         }}
       >
-        Click me!
+        {buttonText}
       </Button>
       {this.maybeRenderHelloWorld()}
         </>
