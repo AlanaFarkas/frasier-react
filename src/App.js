@@ -50,6 +50,7 @@ class App extends Component {
         Click me!
       </Button>
       {this.maybeRenderHelloWorld()}
+      testing
         </>
     );
   }
