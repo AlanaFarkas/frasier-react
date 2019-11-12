@@ -9,13 +9,23 @@ class App extends Component {
       data: [],
       active: {},
       visible: false,
+      showHelloWorld: false
     }
   }
 
   handleClick = () => {
-      fetch("http://api.giphy.com/v1/gifs/search?q=frasier_crane&api_key=Illt50sv9uZ34GhHzF5hOzJhx92NCh6H&limit=1")
-      .then(response => response.json())
-      .then(data => this.setState({ data: data.data }));
+    this.setState({
+      showHelloWorld: true
+    })
+  }
+
+  maybeRenderHelloWorld = () => {
+    const { showHelloWorld } = this.state
+    if( showHelloWorld ) {
+      return (
+        <h1>Hello World</h1>
+      )
+    }
   }
 
   // componentDidMount() {
@@ -26,6 +36,7 @@ class App extends Component {
 
   render() {
     return (
+      <>
       <Button 
         onClick={this.handleClick} 
         ariaProps={{
@@ -36,7 +47,8 @@ class App extends Component {
       >
         Click me!
       </Button>
-
+      {this.maybeRenderHelloWorld()}
+        </>
     );
   }
 }
