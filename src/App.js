@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       data: [],
       active: {},
-      visible: false
+      visible: false,
     }
   }
 
@@ -25,9 +25,17 @@ class App extends Component {
   // }
 
   render() {
-    console.log(this.state)
     return (
-      <Button onClick={this.handleClick}>Click me!</Button>
+      <Button 
+        onClick={this.handleClick} 
+        ariaProps={{
+          ariaLabel: 'LABEL',
+          ariaPressed: 'PRESSED',
+          ariaExpanded: 'EXPANDED'
+        }}
+      >
+        Click me!
+      </Button>
 
     );
   }
