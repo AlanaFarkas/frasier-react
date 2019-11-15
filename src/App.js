@@ -18,7 +18,7 @@ const App = () => {
           null
         )
     }    
-    return <Button onClick={() => console.log('huh')} />
+    return <Button />
   }
 
     return (
