@@ -1,66 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styled from 'styled-components';
+// import { Timer } from './Timer';
 import { Button } from './Button';
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      data: [],
-      active: {},
-      visible: false,
-      showHelloWorld: false,
-      testString: 'testing 123'
-    }
+const App = () => {
+
+  const [isTrue, setBool] = useState(true)
+
+  const handleButtonClick = () => {
+    // console.log('testing')
+    setBool(!isTrue)
+  }
+  
+  const maybeRenderButton = () => {
+    if(!isTrue) {
+        return (
+          null
+        )
+    }    
+    return <Button onClick={() => console.log('huh')} />
   }
 
-  handleClick = () => {
-    // const { showHelloWorld } = this.state
-  this.setState((prevState) => ({
-    showHelloWorld: !prevState.showHelloWorld
-  }));
-  }
-
-
-
-  maybeRenderHelloWorld = () => {
-    const { showHelloWorld } = this.state
-    if( showHelloWorld ) {
-      return (
-        <h1>Hello World</h1>
-      )
-    }
-  }
-
-  // componentDidMount() {
-  //   fetch("http://api.giphy.com/v1/gifs/search?q=frasier_crane&api_key=Illt50sv9uZ34GhHzF5hOzJhx92NCh6H&limit=10")
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ data: data.data }));
-  // }
-
-  render() {
-    const buttonText = "Click here to learn more"
-    const { showHelloWorld, testString } = this.state;
     return (
       <>
-      <Button 
-        onClick={this.handleClick} 
-        ariaProps={{
-          ariaLabel: buttonText,
-          ariaPressed: showHelloWorld ? true : false,
-          ariaExpanded: 'EXPANDED'
-        }}
-      >
-        {buttonText}
-      </Button>
-      {this.maybeRenderHelloWorld()}
-        </>
-    );
-  }
+      <button onClick={handleButtonClick}>Click here</button>
+      {maybeRenderButton()}
+      </>
+    )  
 }
+
 
 export default App;
 
-//Click button to call API for a random Frasier image
-//topText/bottomText inputs handle text for meme
-//be able to save/download/share meme
+
+
