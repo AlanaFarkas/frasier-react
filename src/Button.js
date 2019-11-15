@@ -9,6 +9,7 @@ export const Button = (props) => {
         handleClickState(!isClicked)
     }
 
+    //because it triggers a rerender on every click b/c the state changed! But how to avoid this...?
     useEffect(() => {
         console.log("I'm mounted")
         return () => console.log("I'm unmounted")
