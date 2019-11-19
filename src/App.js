@@ -1,34 +1,31 @@
 import React, { Component, useState } from 'react';
 import styled from 'styled-components';
 // import { Timer } from './Timer';
-import { Button } from './Button';
+import { FancyButton } from './Button';
 
-const App = () => {
-
-  const [isTrue, setBool] = useState(true)
-
-  const handleButtonClick = () => {
-    // console.log('testing')
-    setBool(!isTrue)
-  }
+class App extends Component {
+    constructor(props) {
+      super(props)
   
-  const maybeRenderButton = () => {
-    if(!isTrue) {
-        return (
-          null
-        )
-    }    
-    return <Button />
+      // Create the ref
+      this.textInput = React.createRef();
+    }
+
+    handleClick = (e) => {
+      e.preventDefault();
+      this.textInput.current.focus();
+      console.log(this.textInput.current.value)
+    }
+  
+    render() {
+      return (
+        <>
+          <input type="text" ref={this.textInput} />
+          <FancyButton onClick={this.handleClick}>Submit</FancyButton>
+        </>
+      )
+    }
   }
-
-    return (
-      <>
-      <button onClick={handleButtonClick}>Click here</button>
-      {maybeRenderButton()}
-      </>
-    )  
-}
-
 
 export default App;
 
