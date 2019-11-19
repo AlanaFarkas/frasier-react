@@ -11,17 +11,24 @@ class App extends Component {
       this.textInput = React.createRef();
     }
 
+    state = {
+      ButtonText: '',
+    }
+
     handleClick = (e) => {
       e.preventDefault();
       this.textInput.current.focus();
       console.log(this.textInput.current.value)
+      this.setState({ButtonText: this.textInput.current.value})
     }
   
     render() {
+      const {ButtonText} = this.state;
+      const buttonWords = ButtonText;
       return (
         <>
           <input type="text" ref={this.textInput} />
-          <FancyButton onClick={this.handleClick}>Submit</FancyButton>
+          <FancyButton onClick={this.handleClick}>{buttonWords}</FancyButton>
         </>
       )
     }
